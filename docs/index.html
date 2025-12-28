@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DNS Sinkhole</title>
+
+  <link rel="stylesheet" href="assets/custom.css" />
+  <meta name="theme-color" content="#0a0a0a" />
+</head>
+
+<body>
+
+  <header class="hero">
+    <canvas id="matrix"></canvas>
+
+    <div class="container hero-content">
+      <h1 class="title">DNS SinkHole</h1>
+      <p class="subtitle">A small DNS sinkhole that quietly keeps bad domains away.</p>
+
+      <div class="cta">
+        <a href="https://github.com/your-repo/releases" class="btn primary">Download</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" id="features">
+    <div class="container">
+      <h2>&gt; Features</h2>
+      <ul class="list">
+        <li>UDP-only DNS sinkhole — simple, fast, and reliable.</li>
+        <li>Block unwanted domains using built-in or custom blocklists.</li>
+        <li>Real-time query logging with a clean terminal-styled UI.</li>
+        <li>Local caching for faster repeat lookups.</li>
+        <li>One-click option to make Windows use the sinkhole for DNS.</li>
+        <li>Privacy-focused — no telemetry or analytics.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>&gt; How It Works</h2>
+
+      <p>The app runs a local DNS server on <code>127.0.0.1:53</code>.
+         When a domain is requested, it checks against the blocklist:</p>
+
+<pre class="terminal">
+> A DNS request comes in…
+  ↓
+> Check if the site is in the blocklist
+   ├─ YES → Block it
+   │        → Reply with a safe “blocked” address [0.0.0.0]
+   │        → Status: BLOCKED ✓
+   │
+   └─ NO  → Continue…
+             ↓
+> Check the cache
+   ├─ Cached → Return the cached answer ✓
+   │          → Status: ALLOWED (cached)
+   │
+   └─ Not cached →
+           Ask your normal DNS server for the answer…
+             ├─ Reply received → Cache it → Return it ✓
+             │                  → Status: ALLOWED
+             │
+             └─ No reply / timeout →
+                     Return a safe error response ✓
+                     (prevents browser “waiting for DNS…” hangs)
+
+> Query complete.
+</pre>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>&gt; Requirements</h2>
+      <ul class="list">
+        <li>Windows 10 / 11.</li>
+        <li>Administrator rights (for DNS redirection).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>&gt; Safety &amp; Privacy</h2>
+      <ul class="list">
+        <li>No analytics or user tracking.</li>
+        <li>DNS traffic remains local except when forwarding allowed queries.</li>
+        <li>EDNS Client Subnet (ECS) is not used.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&gt; Project maintained by <strong>Aravind Partheeban</strong></p>
+    </div>
+  </footer>
+
+  <script src="assets/matrix.js"></script>
+</body>
+</html>

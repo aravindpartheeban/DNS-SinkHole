@@ -1,0 +1,107 @@
+/* Global Reset */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Consolas, "Courier New", monospace;
+  background: #080f08;
+  color: #00ff99;
+}
+
+/* Layout */
+.container {
+  width: 92%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(0,255,150,0.2);
+  background: radial-gradient(circle at top, #071207, #020502);
+}
+
+#matrix {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: block;
+  opacity: 0.4;
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  padding-top: 70px;
+}
+
+.title {
+  font-size: 44px;
+  margin: 0 0 10px 0;
+  color: #00ff80;
+  text-shadow: 0 0 18px rgba(0,255,150,0.5);
+}
+
+.subtitle {
+  color: #9cffc7;
+  margin-bottom: 24px;
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 24px;
+  border: 1px solid #00ff99;
+  color: #00ff99;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.btn.primary {
+  background: #00ff99;
+  color: #000;
+}
+
+/* Sections */
+.section {
+  padding: 40px 0;
+  border-bottom: 1px solid rgba(0,255,150,0.12);
+}
+
+.section h2 {
+  margin-top: 0;
+}
+
+/* Lists */
+.list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.list li::before {
+  content: "> ";
+  color: #00ff99;
+}
+
+.list li {
+  margin: 6px 0;
+}
+
+/* Terminal Block */
+.terminal {
+  background: #000;
+  padding: 14px;
+  border: 1px solid rgba(0,255,150,0.25);
+  color: #00ff99;
+  white-space: pre-wrap;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 26px 0;
+  color: #99ffcc;
+}
