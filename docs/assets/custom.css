@@ -15,6 +15,18 @@ body {
   margin: 0 auto;
 }
 
+.container p {
+  color: #b8ffe6;
+}
+
+.container strong {
+  color: #00ff80;
+}
+
+.container em {
+  color: #b8ffe6;
+}
+
 /* HERO SECTION */
 .hero {
   position: relative;
@@ -26,8 +38,10 @@ body {
 
 #matrix {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: block;
   opacity: 0.4;
 }
@@ -73,12 +87,13 @@ body {
 
 .section h2 {
   margin-top: 0;
+  color: #66ffb2;
 }
 
 /* Lists */
 .list {
   list-style: none;
-  padding-left: 0;
+  padding-left: 2;
 }
 
 .list li::before {
@@ -90,13 +105,56 @@ body {
   margin: 6px 0;
 }
 
+/* Two-tone text for lists + quick start */
+.list,
+.qs-list {
+  color: #aaffdd;
+}
+
+.list strong,
+.qs-list strong {
+  color: #00ff80;
+}
+
+.list em,
+.qs-list em {
+  color: #b8ffe6;
+}
+
 /* Terminal Block */
 .terminal {
   background: #000;
   padding: 14px;
   border: 1px solid rgba(0,255,150,0.25);
-  color: #00ff99;
+  color: #aaffdd;       /* softer base text */
   white-space: pre-wrap;
+  letter-spacing: 0.3px;
+}
+
+.terminal strong {
+  color: #00ff80;       /* neon highlight */
+}
+
+.terminal em {
+  color: #b8ffe6;
+}
+
+.terminal::selection {
+  background: rgba(0,255,150,0.25);
+}
+
+/* Quick Start extras */
+.qs-list li {
+  margin: 10px 0 14px 0;
+}
+
+/* Info box */
+.info-box {
+  border: 1px solid rgba(0,255,150,0.3);
+  padding: 12px;
+  margin-top: 16px;
+  background: rgba(0,255,100,0.05);
+  color: #aaffdd;
 }
 
 /* Footer */
@@ -104,4 +162,9 @@ body {
   text-align: center;
   padding: 26px 0;
   color: #99ffcc;
+}
+
+/* Code tone */
+code {
+  color: #9affc7;
 }
