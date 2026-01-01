@@ -24,6 +24,45 @@
     </div>
   </header>
 
+<section class="section">
+  <div class="container">
+    <h2>&gt; Quick Start</h2>
+
+    <ol class="qs-list">
+      <li><strong>Download & run</strong> the latest release.</li>
+
+      <li><strong>Choose a DNS server</strong> in
+          <em>Configuration → Upstream Resolver</em>.
+      </li>
+
+      <li><strong>Add blocklists (Optional)</strong><br>
+          Paste blocklist URLs and click <strong>+</strong>.
+      </li>
+
+      <li><strong>Start the sinkhole</strong><br>
+          Click <strong>Start Sinkhole</strong> — the status will show:
+          <code>[+] Status: Running</code>
+      </li>
+
+      <li><strong>Enable system DNS (Required)</strong><br>
+          Click <strong>Set System DNS</strong> so Windows uses the sinkhole.
+      </li>
+
+      <li><strong>Browse normally</strong><br>
+          The Query Log will display <strong>Allowed</strong> and
+          <strong>Blocked</strong> domains.
+      </li>
+
+        <li><strong>To stop using the sinkhole</strong><br>
+            Just click <strong>Stop Sinkhole</strong> — your original DNS settings are automatically restored.
+        </li>
+
+    </ol>
+
+    </div>
+  </div>
+</section>
+
   <section class="section" id="features">
     <div class="container">
       <h2>&gt; Features</h2>
@@ -42,8 +81,8 @@
     <div class="container">
       <h2>&gt; How It Works</h2>
 
-      <p>The app runs a local DNS server on <code>127.0.0.1:53</code>.
-         When a domain is requested, it checks against the blocklist:</p>
+      <p>The app runs a local DNS server on <code><strong>127.0.0.1:53</strong></code>.
+         When a domain is requested:</p>
 
 <pre class="terminal">
 > A DNS request comes in…
@@ -104,4 +143,3 @@
   <script src="assets/matrix.js"></script>
 </body>
 </html>
-
